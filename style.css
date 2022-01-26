@@ -1,4 +1,4 @@
-$fs: 32px;
+
 
 @keyframes pop {
     0% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
@@ -13,8 +13,8 @@ $fs: 32px;
 body {
     background: #7db9e8;
 
-    //background: -moz-radial-gradient(center, ellipse cover, #7db9e8 0%, #21374b 100%);
-    //background: -webkit-radial-gradient(center, ellipse cover, #7db9e8 0%,#21374b 100%);
+    /*background: -moz-radial-gradient(center, ellipse cover, #7db9e8 0%, #21374b 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #7db9e8 0%,#21374b 100%);*/
     background: radial-gradient(ellipse at center, #7db9e8 0%,#21374b 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#21374b',GradientType=1 );
     margin: 0;
@@ -26,7 +26,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: $fs;
+    font-size: 32px;
     animation: jump 1.2s infinite;
 
 }
