@@ -32,7 +32,7 @@ body {
 }
 
 @keyframes jump {
-    /*a la pos initiale, le packet est disproportionné, plus aplati
+    /*a la pos initiale, le packet est disproportionné, aplati
     on réduit sa taille à 75% sur l'axe Y, et on le modifie a 125%*/
     0% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
     /*quand il jump, il revient à sa taille normale*/
@@ -43,7 +43,6 @@ body {
     60% { transform: translate(-50%, -150%) rotate(-15deg); }
     65% { transform: translate(-50%, -150%) rotate(15deg); }
     70% { transform: translate(-50%, -150%) rotate(-15deg); }
-
 
     /*puis en redescendant, on re-modifie sa taille pour donner un effet d'écrasement*/
     100% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
