@@ -1,15 +1,3 @@
-
-
-@keyframes pop {
-    0% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
-    50% { transform: translate(-50%, -150%) scale(1, 1); }
-    55% { transform: translate(-50%, -150%) rotate(15deg); }
-    60% { transform: translate(-50%, -150%) rotate(-15deg); }
-    65% { transform: translate(-50%, -150%) rotate(15deg); }
-    70% { transform: translate(-50%, -150%) rotate(-15deg); }
-    100% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
-}
-
 body {
     background: #7db9e8;
 
@@ -21,18 +9,112 @@ body {
     width: 100vw;
     height: 100vh;
 }
-#parcel {
+.lds-spinner {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    /*position: relative;
+    width: 80px;
+    height: 80px;*/
+}
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+    content: " ";
+    /*
+    display: block;
+     */
+    position: absolute;
+    top: 5px;
+    left: 37px;
+    width: 5px;
+    height: 18px;
+    border-radius: 20%;
+    background: #fff;
+}
+/*
+Chaque div a la meme taille et une direction différente pour faire un cercle,
+30° de plus pour chaque div
+Faire apparaitre les barres une par une en mettant un délai de
+plus en plus lent de 0,1s(ajouter des secondes)
+ */
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+@keyframes lds-spinner {
+    /*faire apparaitre la div en fonction de son opacité :
+    0 on voit pas, et 1 on voit*/
+    0% {opacity: 1;    }
+    100% {opacity: 0;}
+}
+
+#parcel1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 32px;
     animation: jump 1.2s infinite;
-
+}
+#parcel2 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    animation: zoom 1s infinite;
 }
 
 @keyframes jump {
-    /*a la pos initiale, le packet est disproportionné, aplati
+    /*a la pos initiale, le packet est disproportionné, plus aplati
     on réduit sa taille à 75% sur l'axe Y, et on le modifie a 125%*/
     0% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
     /*quand il jump, il revient à sa taille normale*/
@@ -43,7 +125,11 @@ body {
     60% { transform: translate(-50%, -150%) rotate(-15deg); }
     65% { transform: translate(-50%, -150%) rotate(15deg); }
     70% { transform: translate(-50%, -150%) rotate(-15deg); }
-
     /*puis en redescendant, on re-modifie sa taille pour donner un effet d'écrasement*/
     100% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
 }
+@keyframes zoom {
+     0% { transform: translate(-50%, -50%) scale(1,1); }
+     50% { transform: translate(-50%, -50%) scale(1.2,1.2); }
+     100% { transform: translate(-50%, -50%) scale(1,1); }
+ }
